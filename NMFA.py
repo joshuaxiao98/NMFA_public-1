@@ -2,6 +2,7 @@
 Deciphering the Generating Rules and Functionalities of Complex Networks
 Author X. Xiao, H. Chen, P. Bogdan
 Oct. 31 2020
+The complete code will be made public after the article is published
 '''
 
 from scipy.stats import linregress
@@ -14,6 +15,7 @@ from multiprocessing import Pool
 from tqdm import tqdm
 import time
 
+#The parts of the box-growing method and calculation of the sum function and tau will be made public after the article is published
 
 def is_isomorphic(G1,G2,Q = [q/100 for q in range(-2000,2001,10)]):
     ntauls1 = np.array(nfd_nk(G1,Q))
@@ -23,9 +25,7 @@ def is_isomorphic(G1,G2,Q = [q/100 for q in range(-2000,2001,10)]):
     else:
         return False
 
-def nspectrum(tau_list,q_list=[q/100 for q in range(-2000,2001,10)],name=None,linewidth=5):
-    tau_list = tau_list[170:231]
-    q_list = q_list[170:231]
+def nspectrum(tau_list,q_list=[q/100 for q in range(-2000,2001,10)],name=None,linewidth=4):
     al_list = []
     fal_list = []
     for i in range(1,len(q_list)):
@@ -46,7 +46,7 @@ def nspectrum(tau_list,q_list=[q/100 for q in range(-2000,2001,10)],name=None,li
     return al_list,fal_list, asymmetry_ratio
 
 
-def ndimension(tau_list,q_list=[q/100 for q in range(-2000,2001,10)],linewidth=5,name=None):
+def ndimension(tau_list,q_list=[q/100 for q in range(-2000,2001,10)],linewidth=4,name=None):
     dim_list = []
     qd_list = []
     for i in range(len(q_list)):
